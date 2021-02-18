@@ -1,2 +1,2 @@
 # react_boilerplate
-book searching app with React Boilerplate
+This is book searching app with React Boilerplate
