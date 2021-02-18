@@ -13,4 +13,28 @@ const makeSelectUsername = () =>
     homeState => homeState.username,
   );
 
-export { selectHome, makeSelectUsername };
+const makeSelectSearch = () =>
+  createSelector(
+    selectHome,
+    homeState => homeState.search,
+  );
+
+const makeSelectBKey = () =>
+  createSelector(
+    selectHome,
+    homeState => homeState.bkey,
+  );
+
+const makeSelectBookDetail = () =>
+  createSelector(
+    selectHome,
+    homeState => homeState.bookdetail,
+  );
+
+export {
+  selectHome,
+  makeSelectUsername,
+  makeSelectSearch,
+  makeSelectBKey,
+  makeSelectBookDetail,
+};

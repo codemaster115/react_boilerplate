@@ -8,15 +8,25 @@
  */
 
 import produce from 'immer';
-import { LOAD_REPOS_SUCCESS, LOAD_REPOS, LOAD_REPOS_ERROR } from './constants';
+import {
+  LOAD_REPOS_SUCCESS,
+  LOAD_REPOS,
+  LOAD_REPOS_ERROR,
+  LOAD_BOOKS,
+  LOAD_BOOKS_SUCCESS,
+  LOAD_BOOKS_ERROR,
+} from './constants';
 
 // The initial state of the App
 export const initialState = {
   loading: false,
   error: false,
   currentUser: false,
+  curSearch: false,
+  selectBook: false,
   userData: {
     repositories: false,
+    books: false,
   },
 };
 
@@ -37,6 +47,23 @@ const appReducer = (state = initialState, action) =>
         break;
 
       case LOAD_REPOS_ERROR:
+        draft.error = action.error;
+        draft.loading = false;
+        break;
+
+      case LOAD_BOOKS:
+        draft.loading = true;
+        draft.error = false;
+        draft.userData.books = false;
+        break;
+
+      case LOAD_BOOKS_SUCCESS:
+        draft.userData.books = action.books;
+        draft.loading = false;
+        draft.curSearch = action.search;
+        break;
+
+      case LOAD_BOOKS_ERROR:
         draft.error = action.error;
         draft.loading = false;
         break;

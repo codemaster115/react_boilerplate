@@ -8,11 +8,19 @@
  */
 
 import produce from 'immer';
-import { CHANGE_USERNAME } from './constants';
+import {
+  CHANGE_USERNAME,
+  CHANGE_SEARCH,
+  GET_CUR_BOOK,
+  LOAD_BOOK,
+} from './constants';
 
 // The initial state of the App
 export const initialState = {
   username: '',
+  search: '',
+  bkey: '',
+  bookdetail: [],
 };
 
 /* eslint-disable default-case, no-param-reassign */
@@ -20,8 +28,16 @@ const homeReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
       case CHANGE_USERNAME:
-        // Delete prefixed '@' from the github username
         draft.username = action.username.replace(/@/gi, '');
+        break;
+      case CHANGE_SEARCH:
+        draft.search = action.search;
+        break;
+      case GET_CUR_BOOK:
+        draft.bkey = action.bkey;
+        break;
+      case LOAD_BOOK:
+        draft.bookdetail = action.bookdetail;
         break;
     }
   });

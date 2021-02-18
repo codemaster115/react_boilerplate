@@ -4,6 +4,7 @@ import {
   makeSelectLoading,
   makeSelectError,
   makeSelectRepos,
+  makeSelectBooks,
   makeSelectLocation,
 } from '../selectors';
 
@@ -68,6 +69,21 @@ describe('makeSelectRepos', () => {
       },
     };
     expect(reposSelector(mockedState)).toEqual(repositories);
+  });
+});
+
+describe('makeSelectBooks', () => {
+  const booksSelector = makeSelectBooks();
+  it('should select the books', () => {
+    const books = [];
+    const mockedState = {
+      global: {
+        userData: {
+          books,
+        },
+      },
+    };
+    expect(booksSelector(mockedState)).toEqual(books);
   });
 });
 

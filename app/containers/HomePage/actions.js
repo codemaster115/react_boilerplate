@@ -15,7 +15,12 @@
  *    }
  */
 
-import { CHANGE_USERNAME } from './constants';
+import {
+  CHANGE_USERNAME,
+  CHANGE_SEARCH,
+  GET_CUR_BOOK,
+  LOAD_BOOK,
+} from './constants';
 
 /**
  * Changes the input field of the form
@@ -28,5 +33,33 @@ export function changeUsername(username) {
   return {
     type: CHANGE_USERNAME,
     username,
+  };
+}
+
+export function changeSearch(search) {
+  return {
+    type: CHANGE_SEARCH,
+    search,
+  };
+}
+
+// export function selectBook(book) {
+//   return {
+//     type: SELECT_BOOK,
+//     book,
+//   }
+// }
+
+export function getCurBook(bkey) {
+  return {
+    type: GET_CUR_BOOK,
+    bkey,
+  };
+}
+
+export function bookLoaded(bookdetail) {
+  return {
+    type: LOAD_BOOK,
+    bookdetail,
   };
 }

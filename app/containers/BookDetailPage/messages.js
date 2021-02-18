@@ -1,16 +1,16 @@
 /*
- * FeaturePage Messages
+ * BookDetailPage Messages
  *
- * This contains all the text for the FeaturePage component.
+ * This contains all the text for the BookDetailPage component.
  */
 import { defineMessages } from 'react-intl';
 
-export const scope = 'boilerplate.containers.FeaturePage';
+export const scope = 'boilerplate.containers.BookDetailPage';
 
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: 'Features',
+    defaultMessage: 'Book Details',
   },
   scaffoldingHeader: {
     id: `${scope}.scaffolding.header`,

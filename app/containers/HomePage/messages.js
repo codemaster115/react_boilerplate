@@ -23,10 +23,10 @@ export default defineMessages({
   },
   trymeMessage: {
     id: `${scope}.tryme.message`,
-    defaultMessage: 'Show Github repositories by',
+    defaultMessage: 'Search for books',
   },
   trymeAtPrefix: {
     id: `${scope}.tryme.atPrefix`,
-    defaultMessage: '@',
+    defaultMessage: '',
   },
 });

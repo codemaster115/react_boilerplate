@@ -15,7 +15,15 @@
  *    }
  */
 
-import { LOAD_REPOS, LOAD_REPOS_SUCCESS, LOAD_REPOS_ERROR } from './constants';
+import {
+  LOAD_REPOS,
+  LOAD_REPOS_SUCCESS,
+  LOAD_REPOS_ERROR,
+  LOAD_BOOKS,
+  LOAD_BOOKS_SUCCESS,
+  LOAD_BOOKS_ERROR,
+  SELECT_BOOK,
+} from './constants';
 
 /**
  * Load the repositories, this action starts the request saga
@@ -55,5 +63,32 @@ export function repoLoadingError(error) {
   return {
     type: LOAD_REPOS_ERROR,
     error,
+  };
+}
+
+export function loadBooks() {
+  return {
+    type: LOAD_BOOKS,
+  };
+}
+
+export function booksLoaded(books, search) {
+  return {
+    type: LOAD_BOOKS_SUCCESS,
+    books,
+    search,
+  };
+}
+
+export function booksLoadingError(error) {
+  return {
+    type: LOAD_BOOKS_ERROR,
+    error,
+  };
+}
+
+export function bookSelect() {
+  return {
+    type: SELECT_BOOK,
   };
 }

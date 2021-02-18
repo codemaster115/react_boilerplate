@@ -10,3 +10,6 @@
  */
 
 export const CHANGE_USERNAME = 'boilerplate/Home/CHANGE_USERNAME';
+export const CHANGE_SEARCH = 'boilerplate/Home/CHANGE_SEARCH';
+export const GET_CUR_BOOK = 'boilerplate/Home/GET_CUR_BOOK';
+export const LOAD_BOOK = 'boilerplate/Home/LOAD_BOOK';

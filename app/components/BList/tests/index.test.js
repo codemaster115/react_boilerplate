@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from 'react-testing-library';
 
-import List from '../index';
+import BList from '../index';
 
-describe('<List />', () => {
+describe('<BList />', () => {
   it('should render the passed component if no items are passed', () => {
     const component = () => <li>test</li>; // eslint-disable-line react/prop-types
-    const { container } = render(<List component={component} />);
+    const { container } = render(<BList component={component} />);
     expect(container.querySelector('li')).not.toBeNull();
   });
 
@@ -16,7 +16,7 @@ describe('<List />', () => {
     const component = ({ item }) => <li>{item.name}</li>; // eslint-disable-line react/prop-types
 
     const { container, getByText } = render(
-      <List items={items} component={component} />,
+      <BList items={items} component={component} />,
     );
     const elements = container.querySelectorAll('li');
     expect(elements).toHaveLength(2);
